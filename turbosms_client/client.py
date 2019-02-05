@@ -60,7 +60,7 @@ class TurboSmsClient(object):
             _logger.error(self.error)
             return False
         self.balance = balance
-        if self.balance < self.min_balance:
+        if float(self.balance) < float(self.min_balance):
             self.error = 'Not enough money. Replenish the balance.'
             _logger.info(self.error)
             return False
